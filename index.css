@@ -1,0 +1,122 @@
+.fixmenu {
+    font-weight:  innerWidth;
+    color: white;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px);
+    border-radius: 5px;
+    background: rgb(20, 32, 54);
+    box-shadow: rgb(17, 39, 80);
+    transition: 0.2s;
+    height: 30px;
+    display: block;
+}
+.fixmenu:hover {
+    background: rgb(34, 67, 128);
+}
+
+canvas {
+    cursor: default;
+}
+
+#Black {
+    background: black;
+    color: black;
+}
+#Black:hover {
+    background: #c56a6a;
+}
+#Red {
+    background: #aa0000;
+    color: #aa0000;
+}
+#LightRed {
+    background: red;
+    color: red;
+}
+#Blue {
+    background: blue;
+    color: blue;
+}
+#LightBlue {
+    background: #029AFF;
+    color: #029AFF;
+}
+#Green {
+    background: green;
+    color: green;
+}
+#LightGreen {
+    background: lime;
+    color: lime;
+}
+
+.radcontrol {
+    width: 30px;
+    height: 30px;
+    background: rgb(106, 60, 214);
+    box-shadow: 0 -3px rgb(111, 37, 153) inset;
+    transition: 0.1s;
+    display: inline-block;
+    text-align: center;
+    margin-right: 5px;
+}
+.radcontrol:hover { background: rgb(151, 104, 212); }
+.radcontrol:active {
+    background: rgb(124, 33, 147);
+    box-shadow: 0 3px rgb(124, 33, 147) inset;
+  }
+
+#textRad {
+    float: left;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+#incrad {
+    float: left;
+}
+
+#decrad {
+    float: left;
+}
+
+#colors {
+    float: right;
+  }
+
+.swatch {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.233), 
+                inset 0px 2px 2px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    margin-left: 10px;
+    background: chartreuse;
+}
+
+.swatch.active {
+    border: 2px solid white;
+    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.swatch:hover {
+    box-shadow: inset 0px 5px 0px rgba(213, 240, 164, 0.938), 
+                inset 0px 7px 2px rgb(67, 163, 11);
+
+}
+.toolButton {
+    float: right;
+    height: 20px;
+    padding: 8px;
+    margin-right: 10px;
+    text-align: center;
+    display: inline-block;
+    background-color: #434343;
+}
+.toolButton:hover {
+    background-color: #818181;
+}
+.toolButton:active {
+    background: #ce8585;
+    box-shadow: 0 5px #c56a6a inset;
+}

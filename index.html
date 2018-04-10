@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="index.css">
+    <title>Canvas</title>
+</head>
+<body style="margin: 0">
+    <div class="fixmenu" name="formButtons">
+        
+        <div id="rad">
+            <div id="textRad"> 
+                Radius <span id="radval">10</span>
+            </div>
+            <div id="decrad" class="radcontrol" onclick="decrad05()">-0.5</div>
+            <div id="incrad" class="radcontrol" onclick="incrad05()">+0.5</div>
+            <div id="decrad" class="radcontrol" onclick="decrad1()">-</div>
+            <div id="incrad" class="radcontrol" onclick="incrad1()">+</div>
+            <div id="decrad" class="radcontrol" onclick="decrad5()">-5</div>
+            <div id="incrad" class="radcontrol" onclick="incrad5()">+5</div>
+            
+        </div>
+        
+       <div id="colors">
+           <div class="swatch" id="Red" style="background-color:red"></div>
+           <div class="swatch" id="Green" style="background-color:green"> </div>
+           <div class="swatch" id="Lime" style="background-color:lime"> </div>
+           <div class="swatch" id="Blue" style="background-color:blue"> </div>
+           <div class="swatch" id="Grey" style="background-color:grey"> </div>
+           <div class="swatch active" id="Black" style="background-color:black"> </div>
+           <div class="swatch" id="White" style="background-color:white"> </div>
+           <div class="swatch" id="Orange" style="background-color:orange"> </div>
+           <div class="swatch" id="Yellow" style="background-color:yellow"> </div>
+           <div class="swatch" id="Indigo" style="background-color:indigo"> </div>
+           <div class="swatch" id="Violet" style="background-color:violet"> </div>
+
+       </div> 
+       <div id="ControlButton">
+           <div id="replay" class="toolButton">Воспроизвести</div>
+           <div id="clear" class="toolButton">Очистить</div>   
+           <div id="save" class="toolButton">Сохранить</div>
+           <!-- <div id="saveCoords" class="toolButton">S</div>     
+           <div id="uploadCoords" class="toolButton">U</div>                             -->
+        </div>
+       
+         
+                    
+     
+        
+    </div>
+    
+    <canvas id="canvas" style="display: block">
+        Help, is CRASHED!
+    </canvas>
+
+    <script src="js/radius.js"></script>
+    <script src="js/colors.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/save.js"></script>
+    <script src="js/replay.js"></script>
+    
+</body>
+</html>
