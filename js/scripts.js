@@ -8,16 +8,19 @@ var     buttonClear = document.getElementById('clear');
         canv.width = window.innerWidth;
         canv.height = window.innerHeight;
 var     saveCanv = [];
-
+var     colors = [];
+var     sizePencil = [];
         //Code
-
         buttonClear.addEventListener('click', function(){
             clear();
             coords = [];
+            colors = [];
+            sizePencil = [];
         });
 
         canv.addEventListener('mousedown', function() {
-        	isMouseDown = true;
+            isMouseDown = true;
+            if (radius == NaN) radius = defaultRad;
         });
 
         canv.addEventListener('mouseup', function(){
@@ -25,14 +28,18 @@ var     saveCanv = [];
             saveCanv.push(ctx);
             ctx.beginPath();
             coords.push('mouseup');
+            colors.push('mouseup');
+            sizePencil.push('mouseup');
         });
 
         ctx.lineWidth = radius;
         canv.addEventListener('mousemove', function(e) {
         	
         	if (isMouseDown) {
-                coords.push([e.clientX, e.clientY-50]);
-                
+                sizePencil.push(radius);    //Save size pencil
+                colors.push(ctx.fillStyle); //Save color pencil
+                coords.push([e.clientX, e.clientY-50]); //Save coords pencil
+
                 ctx.lineTo(e.clientX, e.clientY-50);
                 ctx.stroke();
 
@@ -56,6 +63,7 @@ var     saveCanv = [];
             setColor('black');
             var newColor = document.getElementById('Black');
             newColor.className = 'swatch active';
+            radius = 10;
         }
 
         document.addEventListener('keydown', function(e) {

@@ -6,17 +6,9 @@ replayButton.addEventListener('click', replay);
 var saveCoords = document.getElementById('saveCoords');
 var uploadCoords = document.getElementById('uploadCoords');
 
-// saveCoords.addEventListener('click', function(){
-//     //oldCoords = coords;
-// });
-// uploadCoords.addEventListener('click', function(){
-//     //coords = oldCoords;
-// });
-
 function replay(){
     console.log('Replaing...');
     clear();
-    
     var timer = setInterval(function(){
         //var oldCoords = coords;
         if (!coords.length) {
@@ -30,7 +22,14 @@ function replay(){
                 clientX: crd["0"],
                 clientY: crd["1"]
             };
-        //oldCoords.push(e.clientX, e.clientY);
+        ctx.lineWidth = sizePencil[1];
+        radSpan.textContent = sizePencil[1];
+
+        ctx.fillStyle = colors[1];
+        ctx.strokeStyle = colors[1];
+        colors.shift();
+        sizePencil.shift();
+
         ctx.lineTo(e.clientX, e.clientY);
         ctx.stroke();
 
@@ -42,6 +41,5 @@ function replay(){
         ctx.moveTo(e.clientX, e.clientY);
         
     }, 1);
-    
     console.log('Replayed');
 }
