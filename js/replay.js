@@ -9,6 +9,11 @@ var uploadCoords = document.getElementById('uploadCoords');
 function replay(){
     console.log('Replaing...');
     clear();
+
+    ctx.fillStyle = colorFon;
+    ctx.fillRect(0,0, canv.width, canv.height);
+    ctx.beginPath();
+
     var timer = setInterval(function(){
         //var oldCoords = coords;
         if (!coords.length) {

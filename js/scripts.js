@@ -10,12 +10,14 @@ var     buttonClear = document.getElementById('clear');
 var     saveCanv = [];
 var     colors = [];
 var     sizePencil = [];
+var     colorFon;
         //Code
         buttonClear.addEventListener('click', function(){
             clear();
             coords = [];
             colors = [];
             sizePencil = [];
+            colorFon = '#ffffff'
         });
 
         canv.addEventListener('mousedown', function() {

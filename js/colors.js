@@ -29,3 +29,13 @@ function startColor() {
     }
     
 }
+
+//Change background color
+function setColorFon() {
+    colorFon = ctx.fillStyle;
+    ctx.fillRect(0,0, canv.width, canv.height);
+    ctx.beginPath();
+}
+var getColorFon = document.getElementById('colorfon');
+
+getColorFon.addEventListener('click', setColorFon);
