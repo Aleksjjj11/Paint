@@ -10,7 +10,7 @@ var     buttonClear = document.getElementById('clear');
 var     saveCanv = [];
 var     colors = [];
 var     sizePencil = [];
-var     colorFon;
+var     colorFon = '#ffffff';
         //Code
         buttonClear.addEventListener('click', function(){
             clear();

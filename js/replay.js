@@ -9,7 +9,7 @@ var uploadCoords = document.getElementById('uploadCoords');
 function replay(){
     console.log('Replaing...');
     clear();
-
+    if (coords.length > 0) {
     ctx.fillStyle = colorFon;
     ctx.fillRect(0,0, canv.width, canv.height);
     ctx.beginPath();
@@ -47,4 +47,5 @@ function replay(){
         
     }, 1);
     console.log('Replayed');
+}
 }
