@@ -8,16 +8,27 @@ var     buttonClear = document.getElementById('clear');
         canv.width = window.innerWidth;
         canv.height = window.innerHeight;
 var     saveCanv = [];
-var     colors = [];
-var     sizePencil = [];
+var     colors = [], oldColors = [];
+var     sizePencil = [], oldSizePencil = [];
 var     colorFon = '#ffffff';
+var     oldcoords = []; 
+var     cancelActionCount = 0;
+var     canclAction = [];
         //Code
         buttonClear.addEventListener('click', function(){
             clear();
             coords = [];
+            oldcoords = []; 
             colors = [];
+            oldColors = [];
+
+            cancelActionCount = 0; //Clear parametrs
+            canclAction = [];
+
             sizePencil = [];
-            colorFon = '#ffffff'
+            oldSizePencil = [];
+
+            colorFon = '#ffffff';
         });
 
         canv.addEventListener('mousedown', function() {
@@ -30,6 +41,16 @@ var     colorFon = '#ffffff';
             saveCanv.push(ctx);
             ctx.beginPath();
             coords.push('mouseup');
+
+            cancelActionCount++;
+            canclAction.push(cancelActionCount);
+            cancelActionCount = 0;
+
+            //Saving old parametrs
+            oldcoords.push('mouseup'); // #ff0000
+            oldColors.push('mouseup');
+            oldSizePencil.push('mouseup');
+
             colors.push('mouseup');
             sizePencil.push('mouseup');
         });
@@ -38,9 +59,17 @@ var     colorFon = '#ffffff';
         canv.addEventListener('mousemove', function(e) {
         	
         	if (isMouseDown) {
+                //Считаем кол-во действий для рисования одной линии
+                cancelActionCount++;                
+
                 sizePencil.push(radius);    //Save size pencil
                 colors.push(ctx.fillStyle); //Save color pencil
                 coords.push([e.clientX, e.clientY-50]); //Save coords pencil
+                
+                //Saving old parametrs 
+                oldcoords.push([e.clientX, e.clientY-50]); // #ff0000
+                oldColors.push(ctx.fillStyle);
+                oldSizePencil.push(radius);
 
                 ctx.lineTo(e.clientX, e.clientY-50);
                 ctx.stroke();

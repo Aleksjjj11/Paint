@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="index.css">
+    <script type="text/javascript" src="colorpicker.min.js"></script>
     <title>Canvas</title>
 </head>
 <body style="margin: 0">
@@ -36,18 +37,41 @@
 
        </div> 
        <div id="ControlButton">
-           <div id="replay" class="toolButton">Воспроизвести</div>
-           <div id="clear" class="toolButton">Очистить</div>   
-           <div id="save" class="toolButton">Сохранить</div>
-           <div id="colorfon" class="toolButton">Цвет фона</div>
+           <div id="replay" class="toolButton">
+            <img src="icons/basic/173.png"></img>
+               
+           </div>
+           <div id="clear" class="toolButton">
+               <img src="icons/basic/041.png"></img>
+           </div>   
+           <div id="save" class="toolButton">
+            <img src="icons/basic/075.png"></img>               
+           </div>
+           <div id="colorfon" class="toolButton">
+            <img src="icons/multimedia/121.png"></img>
+               
+           </div>
         </div>
-       
-         
-                    
-     
         
     </div>
-    
+<!-- В будущем это выбор цвета с помощью палитры 
+    <div id="color-picker" class="cp-default">
+        <div class="picker-wrapper">
+        <div id="picker" class="picker"></div>
+        <div id="picker-indicator" class="picker-indicator"></div>
+    </div>
+    <div class="pcr-wrapper">
+        <div id="pcr" class="pcr"></div>
+        <div id="pcr-indicator" class="pcr-indicator"></div>
+     </div>
+    <ul id="color-values">
+        <li><label>RGB:</label><span id="rgb"></span></li>
+        <li><label>HSV:</label><span id="hsv"></span></li>
+        <li><label>HEX:</label><span id="hex"></span></li>
+        <li><div id="pcr_bg"></div></li>
+    </ul>
+    </div> -->
+
     <canvas id="canvas" style="display: block">
         Help, is CRASHED!
     </canvas>

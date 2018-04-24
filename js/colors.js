@@ -35,6 +35,7 @@ function setColorFon() {
     colorFon = ctx.fillStyle;
     ctx.fillRect(0,0, canv.width, canv.height);
     ctx.beginPath();
+    replay();
 }
 var getColorFon = document.getElementById('colorfon');
 

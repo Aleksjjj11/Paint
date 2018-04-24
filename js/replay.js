@@ -9,17 +9,23 @@ var uploadCoords = document.getElementById('uploadCoords');
 function replay(){
     console.log('Replaing...');
     clear();
+
+    if (coords.length < 1) 
+        for (var i = 0; i < oldcoords.length; i++) {
+            coords.push(oldcoords[i]); // #ff0000
+            colors.push(oldColors[i]);
+            sizePencil.push(oldSizePencil[i]);
+        }
     if (coords.length > 0) {
     ctx.fillStyle = colorFon;
     ctx.fillRect(0,0, canv.width, canv.height);
     ctx.beginPath();
 
+    //Replaying...
     var timer = setInterval(function(){
-        //var oldCoords = coords;
         if (!coords.length) {
             clearInterval(timer);
             ctx.beginPath();
-            //coords = oldCoords;
             return;
         }
         var crd = coords.shift(),
@@ -46,6 +52,11 @@ function replay(){
         ctx.moveTo(e.clientX, e.clientY);
         
     }, 1);
+    for (var i = 0; i < oldcoords.length; i++) {
+        coords.push(oldcoords[i]); // #ff0000
+        colors.push(oldColors[i]);
+        sizePencil.push(oldSizePencil[i]);
+    }
     console.log('Replayed');
 }
 }
