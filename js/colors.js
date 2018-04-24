@@ -35,7 +35,9 @@ function setColorFon() {
     colorFon = ctx.fillStyle;
     ctx.fillRect(0,0, canv.width, canv.height);
     ctx.beginPath();
-    replay();
+    console.log('Overlay color');
+    replay(0.0001);
+    console.log('Color applied');    
 }
 var getColorFon = document.getElementById('colorfon');
 

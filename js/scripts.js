@@ -107,7 +107,7 @@ var     canclAction = [];
 
             if (e.keyCode == 82) {
                 // replay
-                replay();
+                replay(1);
                 document.execcommand("undo");                
                
             }

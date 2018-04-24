@@ -6,7 +6,7 @@ replayButton.addEventListener('click', replay);
 var saveCoords = document.getElementById('saveCoords');
 var uploadCoords = document.getElementById('uploadCoords');
 
-function replay(){
+function replay(time){
     console.log('Replaing...');
     clear();
 
@@ -51,7 +51,7 @@ function replay(){
         ctx.beginPath();
         ctx.moveTo(e.clientX, e.clientY);
         
-    }, 1);
+    }, time);
     for (var i = 0; i < oldcoords.length; i++) {
         coords.push(oldcoords[i]); // #ff0000
         colors.push(oldColors[i]);
