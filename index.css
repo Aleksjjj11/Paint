@@ -104,6 +104,16 @@ canvas {
                 inset 0px 7px 2px rgb(67, 163, 11);
 
 }
+.toolButton:hover::after {
+    content: attr(data-title);
+    position: absolute;
+    background: rgba(184, 199, 156, 0.938);
+    color: rgb(54, 26, 26);
+    font-size: 14px;
+    z-index: 1;
+    padding: 2px;
+    border: 1px solid #333333;
+}
 .toolButton {
     float: right;
     height: 20px;
