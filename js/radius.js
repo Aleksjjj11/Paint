@@ -9,7 +9,7 @@ var
 var 
     minRad = 0.5,
     maxRad = 105,
-    defaultRad = 10,
+    defaultRad = 5,
     radSpan = document.getElementById('radval'),
     decSpan = document.getElementById('decrad'),
     incSpan = document.getElementById('incrad');

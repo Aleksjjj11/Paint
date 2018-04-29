@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="index.css">
-    <script type="text/javascript" src="colorpicker.min.js"></script>
+    
     <title>Canvas</title>
 </head>
 <body style="margin: 0">
@@ -11,7 +11,7 @@
         
         <div id="rad">
             <div id="textRad"> 
-                Radius <span id="radval">10</span>
+                Radius <span id="radval">5</span>
             </div>
             <div id="decrad" class="radcontrol" onclick="decrad05()">-0.5</div>
             <div id="incrad" class="radcontrol" onclick="incrad05()">+0.5</div>
@@ -23,7 +23,7 @@
         </div>
         
        <div id="colors">
-           <div class="swatch" id="Red" style="background-color:red"></div>
+           <!-- <div class="swatch" id="Red" style="background-color:red"></div>
            <div class="swatch" id="Green" style="background-color:green"> </div>
            <div class="swatch" id="Lime" style="background-color:lime"> </div>
            <div class="swatch" id="Blue" style="background-color:blue"> </div>
@@ -33,7 +33,8 @@
            <div class="swatch" id="Orange" style="background-color:orange"> </div>
            <div class="swatch" id="Yellow" style="background-color:yellow"> </div>
            <div class="swatch" id="Indigo" style="background-color:indigo"> </div>
-           <div class="swatch" id="Violet" style="background-color:violet"> </div>
+           <div class="swatch" id="Violet" style="background-color:violet"> </div> -->
+           <div class="swatchactive"  id="NewColor" data-title="Текущий цвет кисти"> </div>           
 
        </div> 
        <div id="ControlButton">
@@ -48,39 +49,49 @@
             <img src="icons/basic/075.png">              
            </div>
            <div id="colorfon" class="toolButton" data-title="Поменять цвет фона">
-            <img src="icons/multimedia/124.png">
-               
+            <img src="icons/multimedia/124.png">   
+           </div>
+           <div id="colorPen" class="toolButton" data-title="Поменять цвет кисти">
+            <img src="icons/multimedia/080.png">   
            </div>
         </div>
-        
-    </div>
-<!-- В будущем это выбор цвета с помощью палитры 
-    <div id="color-picker" class="cp-default">
-        <div class="picker-wrapper">
-        <div id="picker" class="picker"></div>
-        <div id="picker-indicator" class="picker-indicator"></div>
-    </div>
-    <div class="pcr-wrapper">
-        <div id="pcr" class="pcr"></div>
-        <div id="pcr-indicator" class="pcr-indicator"></div>
-     </div>
-    <ul id="color-values">
-        <li><label>RGB:</label><span id="rgb"></span></li>
-        <li><label>HSV:</label><span id="hsv"></span></li>
-        <li><label>HEX:</label><span id="hex"></span></li>
-        <li><div id="pcr_bg"></div></li>
-    </ul>
-    </div> -->
 
-    <canvas id="canvas" style="display: block">
-        Help, is CRASHED!
-    </canvas>
+    </div>
+
+    <div id="pospicker">
+        <canvas id="canvas" style="display: block">
+            Help, is CRASHED!
+        </canvas>
+
+    <!-- В будущем это выбор цвета с помощью палитры  -->
+    
+        <div id="color-picker" class="cp-default">
+            <div class="picker-wrapper">
+            <div id="picker" class="picker"></div>
+            <div id="picker-indicator" class="picker-indicator"></div>
+        </div>
+        <div class="pcr-wrapper">
+            <div id="pcr" class="pcr"></div>
+            <div id="pcr-indicator" class="pcr-indicator"></div>
+         </div>
+        <ul id="color-values">
+            <li><label>RGB:</label><span id="rgb"></span></li>
+            <li><label>HSV:</label><span id="hsv"></span></li>
+            <li><label>HEX:</label><span id="hex"></span></li>
+            <li><div id="pcr_bg"></div></li>
+        </ul>
+        </div>
+    </div>
+
 
     <script src="js/radius.js"></script>
     <script src="js/colors.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/save.js"></script>
     <script src="js/replay.js"></script>
-    
+    <script src="js/colorpicker.js"></script>
+    <script type="text/javascript" src="js/colorpicker.min.js"></script>
+    <script src="js/movecolorpicker.js"></script>
+          
 </body>
 </html>

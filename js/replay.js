@@ -38,6 +38,7 @@ function replay(time){
 
         ctx.fillStyle = colors[1];
         ctx.strokeStyle = colors[1];
+        if (colors[1] != 'mouseup') cp.setHex(colors[1]);
         colors.shift();
         sizePencil.shift();
 

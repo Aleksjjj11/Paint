@@ -5,8 +5,10 @@ var
         radius = defaultRad,
         coords = [];
 var     buttonClear = document.getElementById('clear');
-        canv.width = window.innerWidth;
-        canv.height = window.innerHeight;
+        //canv.width = window.innerWidth;
+        canv.width = 800;        
+        //canv.height = window.innerHeight;
+        canv.height = 500;        
 var     saveCanv = [];
 var     colors = [], oldColors = [];
 var     sizePencil = [], oldSizePencil = [];
@@ -17,6 +19,7 @@ var     canclAction = [];
         //Code
         buttonClear.addEventListener('click', function(){
             clear();
+            cp.setHex('#000000');
             coords = [];
             oldcoords = []; 
             colors = [];
@@ -64,22 +67,22 @@ var     canclAction = [];
 
                 sizePencil.push(radius);    //Save size pencil
                 colors.push(ctx.fillStyle); //Save color pencil
-                coords.push([e.clientX, e.clientY-50]); //Save coords pencil
+                coords.push([e.clientX-275, e.clientY-60]); //Save coords pencil
                 
                 //Saving old parametrs 
-                oldcoords.push([e.clientX, e.clientY-50]); // #ff0000
+                oldcoords.push([e.clientX-275, e.clientY-60]); // #ff0000
                 oldColors.push(ctx.fillStyle);
                 oldSizePencil.push(radius);
 
-                ctx.lineTo(e.clientX, e.clientY-50);
+                ctx.lineTo(e.clientX-275, e.clientY-60);
                 ctx.stroke();
 
         		ctx.beginPath();
-        		ctx.arc(e.clientX, e.clientY-50, ctx.lineWidth / 2, 0, Math.PI*2);
+        		ctx.arc(e.clientX-275, e.clientY-60, ctx.lineWidth / 2, 0, Math.PI*2);
         		ctx.fill();
 
                 ctx.beginPath();
-                ctx.moveTo(e.clientX, e.clientY-50);
+                ctx.moveTo(e.clientX-275, e.clientY-60);
         	}
         });
         
@@ -91,10 +94,10 @@ var     canclAction = [];
             ctx.fillRect(0,0, canv.width, canv.height);
             ctx.beginPath();
             startColor();
-            setColor('black');
-            var newColor = document.getElementById('Black');
-            newColor.className = 'swatch active';
-            radius = 10;
+            newColor = '#000000';
+            setColor(newColor);
+            document.getElementById('NewColor').style.backgroundColor = newColor;
+            radius = 5;
         }
 
         document.addEventListener('keydown', function(e) {
