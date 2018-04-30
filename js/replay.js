@@ -12,7 +12,7 @@ function replay(time){
 
     if (coords.length < 1) 
         for (var i = 0; i < oldcoords.length; i++) {
-            coords.push(oldcoords[i]); // #ff0000
+            coords.push(oldcoords[i]); 
             colors.push(oldColors[i]);
             sizePencil.push(oldSizePencil[i]);
         }
@@ -38,6 +38,7 @@ function replay(time){
 
         ctx.fillStyle = colors[1];
         ctx.strokeStyle = colors[1];
+        document.getElementById('NewColor').style.backgroundColor = colors[1];
         if (colors[1] != 'mouseup') cp.setHex(colors[1]);
         colors.shift();
         sizePencil.shift();
@@ -54,7 +55,7 @@ function replay(time){
         
     }, time);
     for (var i = 0; i < oldcoords.length; i++) {
-        coords.push(oldcoords[i]); // #ff0000
+        coords.push(oldcoords[i]); 
         colors.push(oldColors[i]);
         sizePencil.push(oldSizePencil[i]);
     }
